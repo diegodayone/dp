@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="flex.css">
+</head>
+
+<body>
+    <h1>Flex Box Test</h1>
+    <input type="button" onclick="calcolaPreventivo()" value="Richiedi preventivo">
+    <div class="container1">
+        <div class="box1">
+            <p>Ciao mondo</p>
+        </div>
+        <div class="box2">
+            <p> Ciao mondo</p>
+        </div>
+    </div>
+
+    <div class="container2">
+        <div class="box1">
+            <p>Ciao mondo</p>
+        </div>
+        <div class="box2">
+            <div class="stats">
+                <div>Guariti 1000</div>
+                <div class="mo">Morti 100</div>
+                <div class="ca">Camera Anale 50</div>
+            </div>
+            <div class="tassorosso">tasso grezzo di letalità: 9.51%</div>
+            <div class="nuovicasi">
+                <div>Nuovi anali: 50</div>
+                <div>Nuovi passivi: 5</div>
+                <div>Nuovi attivi: 10</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container3">
+        <div class="box1">
+            <p>Ciao mondo</p>
+        </div>
+        <div class="box2">
+            <p>Ciao mondo</p>
+        </div>
+        <div class="box3">
+            <p>Ciao mondo</p>
+        </div>
+    </div>
+
+    <input type="button" value="Aggiungi N colonne" onclick="aggiungiColonne()" />
+
+    <div class="container4">
+    </div>
+
+    <script>
+
+        function calcolaPreventivo() {
+            let valoreStringa = prompt("Ciao, dimmi quanto stai spendendo!");
+            let valore = parseFloat(valoreStringa);
+            if (valore > 100){
+                //ritorna semplicemente il valore
+                console.log("Il valore è sopra 100")
+            }
+            else {
+                console.log("Il valore è sotto 100")
+                valore += 10
+                //valore = valore + 10
+                //aggiungi al valore i costi di spedizione
+            }
+            //scrivi il valore in camera anale
+            let cameraAnale = document.querySelector(".stats .ca")
+            cameraAnale.innerText = valore + " €"
+
+            //fai comparire in guariti il valore del carrello
+            //fai comparire in morti evetuali spese di spedizione
+        }
+
+        function aggiungiColonne(){
+            let colonneStringa = prompt("Quante colonne vuoi?")
+            let numeroColonne = parseInt(colonneStringa)
+
+            //prendere un riferimento al contenitore 4
+            let contenitore4 = document.querySelector(".container4")
+            //aggiungere N colonne al contenitore 4
+            for(let i = 0; i < numeroColonne; i++){ //i = i + 1
+                contenitore4.innerHTML += "<div>" + i + "</div>";
+            }
+        }
+
+        // scrivi una funzione che "giochi a fiz buzz"
+        // la funzione chiede un numero 
+        // 1
+        // 2
+        // fizz
+        // 4
+        // 5
+        // fizz
+        // buzz
+        //
+        // stampa tutti i numero tranne i multipli di 3 per i quali scrive fizz, i multipli di 7 per i quali scrive buzz e per i multipli di 3 e 7 scrive fizz buzz
+        
+
+    </script>
+</body>
+</html>
