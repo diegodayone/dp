@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function gioco(n) {
+            // let i = 1;
+            // while(i <= n) {
+            //     console.log(i);
+            //     i++;
+            // }
+
+            //inizializzazione; controllo; incremento
+            for (let i = 1; i <= n; i++) {
+                if ((i % 3 == 0) && (i % 7 == 0)) //condizione vera solo se entrambe le condizioni sono vere
+                    console.log("fizz buzz");
+                else if (i % 3 == 0) //se il resto della divisione tra i e 3 è 0, allora è multiplo di 3 => fiz
+                    console.log("fizz");
+                else if (i % 7 == 0) //se il resto della divisione tra i e 7 è 0, allora è multiplo di 7 => fiz
+                    console.log("buzz");
+                else
+                    console.log(i)
+            }
+            // && => AND vero se tutte le parti sono vere
+            // || => OR vero se almeno una è vera
+
+            // while (i < n){
+            //     console.log("ciao sono il while")
+            // }
+
+            // do {
+            //     console.log("ciao sono il do while")
+            // } while(i < n)
+        }
+
+        //signature della funzione
+        function pippo(a, b, c){
+            if (a === undefined || b === undefined || c === undefined)
+                return "Dato input non valido"
+
+            console.log("ciao sono a: " + a)
+            console.log("ciao sono b: " + b)
+            console.log("ciao sono c: " + c)
+
+            b.eta = 31;
+            console.log(b.nome, b.cognome, b.eta)
+            //c();
+        }
+
+        function somma(primoValore, secondoValore){
+            return [ primoValore + secondoValore, primoValore- secondoValore]
+            console.log("orca loca")
+
+            // return {
+            //     somma: primoValore + secondoValore,
+            //     differenza: primoValore - secondoValore,
+            //     prodotto: primoValore * secondoValore,
+            //     divisione: primoValore / secondoValore
+            // }
+            // return primoValore + secondoValore;
+        }
+    </script>
+</body>
+</html>
