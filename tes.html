@@ -6,7 +6,26 @@
     <title>Document</title>
 </head>
 <body>
+    <input type="number" id="totale" placeholder="Metti qua il numero..." />
+    <input type="button" value="gioca" onclick="iniziaLaPartita()" />
+
+    <ul id="dp">
+
+    </ul>
+    
     <script>
+
+        // scrivi una funzione MassimoBoldi che riceve in ingresso un array di qualunque dimensione e ritorna il valore più grande.
+
+        function iniziaLaPartita() {
+            // va a prendere il valore dall input number
+            let inputNumero = document.querySelector("#totale").value
+            // lo trasforma (se serve) in un numero
+            let totale = parseInt(inputNumero)
+            // e invoca la funziona gioca passando questo numero
+            gioco(totale)
+        }
+
         function gioco(n) {
             // let i = 1;
             // while(i <= n) {
@@ -14,16 +33,22 @@
             //     i++;
             // }
 
+            let ilNostroUL = document.querySelector("#dp");
+
             //inizializzazione; controllo; incremento
             for (let i = 1; i <= n; i++) {
                 if ((i % 3 == 0) && (i % 7 == 0)) //condizione vera solo se entrambe le condizioni sono vere
-                    console.log("fizz buzz");
+                    ilNostroUL.innerHTML += "<li> fizz buzz </li>"
+                    //console.log("fizz buzz");
                 else if (i % 3 == 0) //se il resto della divisione tra i e 3 è 0, allora è multiplo di 3 => fiz
-                    console.log("fizz");
+                    ilNostroUL.innerHTML += "<li> fizz </li>"
+                    //console.log("fizz");
                 else if (i % 7 == 0) //se il resto della divisione tra i e 7 è 0, allora è multiplo di 7 => fiz
-                    console.log("buzz");
+                    //console.log("buzz");
+                    ilNostroUL.innerHTML += "<li> buzz </li>"
                 else
-                    console.log(i)
+                    ilNostroUL.innerHTML += "<li>" + i + "</li>"
+                    //console.log(i)
             }
             // && => AND vero se tutte le parti sono vere
             // || => OR vero se almeno una è vera
